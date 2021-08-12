@@ -11,6 +11,10 @@
 	<groupId>mx.com.wiirux</groupId>
 	<artifactId>sfg-pet-clinic-v2</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<modules>
+		<module>pet-clinic-web-v2</module>
+		<module>pet-clinic-data-v2</module>
+	</modules>
 	<packaging>pom</packaging>
 	<name>sfg-pet-clinic-v2</name>
 	<description>SFG Pet Clinic Project</description>
@@ -19,24 +23,38 @@
 	</properties>
 
 	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-				<configuration>
-					<excludes>
-						<exclude>
-							<groupId>org.projectlombok</groupId>
-							<artifactId>lombok</artifactId>
-						</exclude>
-					</excludes>
-				</configuration>
-			</plugin>
-		</plugins>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-maven-plugin</artifactId>
+					<configuration>
+						<mainClass>mx.com.wiirux.sfgpetclinic.SfgPetClinicApplication</mainClass>
+						<excludes>
+							<exclude>
+								<groupId>org.projectlombok</groupId>
+								<artifactId>lombok</artifactId>
+							</exclude>
+						</excludes>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-release-plugin</artifactId>
+					<configuration>
+						<goals>install</goals>
+						<!-- <pushChanges>false</pushChanges>-->
+						<autoVersionSubmodules>true</autoVersionSubmodules>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
 	</build>
-
-	<modules>
-		<module>pet-clinic-web-v2</module>
-		<module>pet-clinic-data-v2</module>
-	</modules>
+	
+	<scm>
+		<url>https://github.com/WiiruxCruz/sfg-pet-clinic-v2</url>
+		<!-- <connection>scm:git:git@github.com:WiiruxCruz/sfg-pet-clinic.git</connection> -->
+		<developerConnection>scm:git:git@github.com:WiiruxCruz/sfg-pet-clinic-v2.git</developerConnection>
+    	<tag>HEAD</tag>
+    </scm>
 </project>
