@@ -10,9 +10,9 @@
   
   <dependencies>
   	<dependency>
-  		<artifactId>pet-clinic-data</artifactId>
+  		<artifactId>pet-clinic-data-v2</artifactId>
   		<groupId>mx.com.wiirux</groupId>
-  		<version>0.0.1-SNAPSHOT</version>
+  		<version>0.0.1</version>
   	</dependency>
   	<dependency>
 		<groupId>org.springframework.boot</groupId>
